@@ -1,4 +1,4 @@
-# Bootstrap a SPA
+# Bootstrap a backend
 
 #### Components:
 * Node.js
