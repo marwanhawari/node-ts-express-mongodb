@@ -38,4 +38,4 @@ EXPOSE 5050
 # Switch to the non-root user
 USER app
 
-CMD ["npm", "run", "start"]
+CMD ["node", "dist/index.js"]

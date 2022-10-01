@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGODB_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_PASS}"
+    volumes:
+      - ./docker-mongodb/:/data/db
+  api:
+    image: marwanhawari/node-ts-express-mongodb
+    restart: unless-stopped
+    environment:
+      MONGODB_URI: "mongodb://${MONGODB_USERNAME}:${MONGODB_PASS}@mongo:27017/"
+    ports:
+      - "5050:5050"
+    depends_on:
+      - mongo
+
