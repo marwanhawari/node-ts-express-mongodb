@@ -16,7 +16,7 @@ export async function findAll(
 
     let queryFilter: UserQueryParameter = {};
     if (requestedUserAge) {
-        queryFilter.age = requestedUserAge;
+        queryFilter.age = +requestedUserAge;
     }
     if (requestedUserRole) {
         queryFilter.role = requestedUserRole;
